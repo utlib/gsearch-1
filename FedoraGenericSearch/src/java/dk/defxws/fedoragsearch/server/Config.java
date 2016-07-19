@@ -79,7 +79,9 @@ import org.fcrepo.server.types.gen.MIMETypedStream;
 public class Config {
 
     FedoraClient fgsconfigObjectsClient = null;
-    
+
+    String solrCore = "";
+
     private static Config currentConfig = null;
     
     private static Hashtable<String, Config> configs = new Hashtable<String, Config>();
@@ -129,7 +131,7 @@ public class Config {
     private String searchResultFilteringModuleProperty = null;
     
     private StringBuffer errors = null;
-    
+
     private final Logger logger = Logger.getLogger(Config.class);
 
     /**
@@ -1006,7 +1008,7 @@ public class Config {
     }
     
     public String getIndexBase(String indexName) {
-        return insertSystemProperties(getIndexProps(indexName).getProperty("fgsindex.indexBase"));
+        return insertSystemProperties(getIndexProps(indexName).getProperty("fgsindex.indexBase")) + this.solrCore;
     }
     
     public String getIndexDir(String indexName) {

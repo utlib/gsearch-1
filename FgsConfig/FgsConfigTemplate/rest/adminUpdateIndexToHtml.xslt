@@ -19,6 +19,7 @@
 						<td>
 							<input type="hidden" name="operation" value="updateIndex"/>
 							<input type="hidden" name="action" value="createEmpty"/>
+							Solr Core: <input type="text" name="solrCore" size="40" value=""/>
 							<xsl:text> </xsl:text><input type="submit" value="updateIndex createEmpty"/>
 						</td>
 					</tr>
@@ -31,6 +32,7 @@
 						<td>
 							<input type="hidden" name="operation" value="updateIndex"/>
 							<input type="hidden" name="action" value="optimize"/>
+							Solr Core: <input type="text" name="solrCore" size="40" value=""/>
 							<xsl:text> </xsl:text><input type="submit" value="updateIndex optimize"/>
 						</td>
 					</tr>
@@ -43,6 +45,7 @@
 						<td>
 							<input type="hidden" name="operation" value="updateIndex"/>
 							<input type="hidden" name="action" value="fromFoxmlFiles"/>
+							Solr Core: <input type="text" name="solrCore" size="40" value=""/>
 							Foxml files path: <input type="text" name="value" size="40" value=""/> 
 							<xsl:text> </xsl:text><input type="submit" value="updateIndex fromFoxmlFiles"/>
 						</td>
@@ -56,6 +59,7 @@
 						<td>
 							<input type="hidden" name="operation" value="updateIndex"/>
 							<input type="hidden" name="action" value="fromPid"/>
+							Solr Core: <input type="text" name="solrCore" size="40" value=""/>
 							Pid: <input type="text" name="value" size="30" value=""/> 
 							<xsl:text> </xsl:text><input type="submit" value="updateIndex fromPid"/>
 						</td>
@@ -69,6 +73,7 @@
 						<td>
 							<input type="hidden" name="operation" value="updateIndex"/>
 							<input type="hidden" name="action" value="deletePid"/>
+							Solr Core: <input type="text" name="solrCore" size="40" value=""/>
 							Pid: <input type="text" name="value" size="30" value=""/> 
 							<xsl:text> </xsl:text><input type="submit" value="updateIndex deletePid"/>
 						</td>

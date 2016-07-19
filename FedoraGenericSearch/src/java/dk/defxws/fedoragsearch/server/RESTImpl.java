@@ -74,6 +74,8 @@ public class RESTImpl extends HttpServlet {
     private static final String PARAM_FIELDNAME = "fieldName";
     private static final String PARAM_ACTION = "action";
     private static final String PARAM_VALUE = "value";
+    private static final String PARAM_SOLRCORE = "solrCore";
+
     
     /** Exactly the same behavior as doGet */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -88,6 +90,8 @@ public class RESTImpl extends HttpServlet {
         String configName = request.getParameter(PARAM_CONFIGNAME);
         String operation = request.getParameter(PARAM_OPERATION);
         String remoteUser = request.getRemoteUser();
+        String solrCore = request.getParameter(PARAM_SOLRCORE);
+
         if (remoteUser==null) remoteUser = "";
         StringBuffer uasb = new StringBuffer("\nFEDORA_AUX_SUBJECT_ATTRIBUTES=");
         fgsUserAttributes = (Map<String, Set<String>>) request.getAttribute("FEDORA_AUX_SUBJECT_ATTRIBUTES");
@@ -114,6 +118,9 @@ public class RESTImpl extends HttpServlet {
         if (configName!=null && !"configure".equals(operation)) {
         	// mainly for test purposes
         	config = Config.getConfig(configName);
+        }
+        if (solrCore != null && solrCore != "") {
+            config.solrCore = solrCore;
         }
         StringBuffer resultXml = new StringBuffer("<resultPage/>");
         repositoryName = request.getParameter(PARAM_REPOSITORYNAME);
